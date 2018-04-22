@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$md-spotahomePalette: (
+  50 : #fafcfa,
+  100 : #f4f9f2,
+  200 : #ecf5e9,
+  300 : #e4f0e0,
+  400 : #dfedda,
+  500 : #d9ead3,
+  600 : #d5e7ce,
+  700 : #cfe4c8,
+  800 : #cae1c2,
+  900 : #c0dbb7,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #ffffff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$spotahome-app-primary: mat-palette($md-spotahomePalette, A100);
+$spotahome-app-accent:  mat-palette($mat-blue-grey);
+$spotahome-app-warn:    mat-palette($mat-deep-orange);
+$spotahome-app-theme: mat-light-theme($spotahome-app-primary, $spotahome-app-accent, $spotahome-app-warn);
+@include angular-material-theme($spotahome-app-theme);

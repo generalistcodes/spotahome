@@ -1,6 +1,18 @@
-# NgSpotahome
+# Spotahome Angular Demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
+
+## Installation
+
+Run `npm install`
+
+## Running the app(with proxy and CORS)
+
+Run `npm start`
+
+## Running without proxy  for CORS
+
+Run `ng serve`
 
 ## Development server
 

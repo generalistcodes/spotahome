@@ -1,0 +1,21 @@
+//use for avoiding CORS issues in localhost
+{
+  "/madrid": {
+    "target": "https://www.spotahome.com/api/public/listings/search/markers/madrid",
+    "secure": false,
+    "pathRewrite": {
+      "^/madrid": ""
+    },
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/homecards_ids": {
+    "target": "https://www.spotahome.com/api/public/listings/search/homecards_ids",
+    "secure": false,
+    "pathRewrite": {
+      "^/homecards_ids": ""
+    },
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
