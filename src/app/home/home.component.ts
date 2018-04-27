@@ -7,6 +7,9 @@ import { Observable } from 'rxjs/Observable';
 import { OrderPipe } from 'ngx-order-pipe';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {ActivatedRoute} from "@angular/router";
+
+
 
 import 'rxjs/add/operator/map';
 
@@ -37,24 +40,26 @@ export class HomeComponent implements OnInit {
 
   homeTypes = [
     {value: 'all', viewValue: 'All'},
-    {value: 'room', viewValue: 'Room'}
-    {value: 'apartment', viewValue: 'Apartment'}
-    {value: 'studios', viewValue: 'Studios'}
+    {value: 'room', viewValue: 'Room'},
+    {value: 'apartment', viewValue: 'Apartment'},
+    {value: 'studios', viewValue: 'Studios'},
     {value: 'residence', viewValue: 'Residence'}
   ];
 
   selectedValue:string = this.homeTypes[0].value;
 
 
-  constructor(private http:HttpClient, private orderPipe:OrderPipe) {
+  constructor(private http:HttpClient, private orderPipe:OrderPipe, private route: ActivatedRoute) {
+      //console.log('this.route',this.route.queryParams.value);
+    //this.route.params.subscribe( type => console.log("params:",type) );
 
-    this.http.get(this.MARKER_URL).subscribe(res=> {
+    this.http.get(this.MARKER_URL).subscribe((res: any) => {
       let markerId = [];
       res.data.forEach(function (markers) {
         markerId.push(markers['id']);
       });
       let homeCardParam = "?ids[]" + markerId.slice(0, 31).join('&ids[]=');
-      this.http.get(this.HOMECARDS_URL + homeCardParam).subscribe(res=> {
+      this.http.get(this.HOMECARDS_URL + homeCardParam).subscribe((res: any)=> {
         let cards = res.data.homecards;
         cards.sort(function (card1, card2) {
           return card1.pricePerMonth - card2.pricePerMonth;

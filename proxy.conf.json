@@ -1,4 +1,3 @@
-//use for avoiding CORS issues in localhost
 {
   "/madrid": {
     "target": "https://www.spotahome.com/api/public/listings/search/markers/madrid",

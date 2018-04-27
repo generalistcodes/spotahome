@@ -8,6 +8,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+//    "forceConsistentCasingInFileNames": true,
+//    "noImplicitReturns": true,
+//    "strict": true,
+//    "noUnusedLocals": true,
     "typeRoots": [
       "node_modules/@types"
     ],
